@@ -1,0 +1,8 @@
+{
+  "printWidth": 80,
+  "eslintIntegration": true,
+  "singleQuote": true,
+  "semi": false,
+  "endOfLine": "auto",
+  "indent": ["error", 2]
+}
