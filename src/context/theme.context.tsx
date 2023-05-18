@@ -13,7 +13,7 @@ export const tokens = (mode: Theme) => {
         500: '#666666',
         600: '#525252',
         700: '#3d3d3d',
-        800: '#292929',
+        800: 'rgba(41, 41, 41',
         900: '#141414',
       },
       primary: {
@@ -50,15 +50,15 @@ export const tokens = (mode: Theme) => {
         900: '#2c100f',
       },
       blueAccent: {
-        100: '#e1e2fe',
-        200: '#c3c6fd',
-        300: '#a4a9fc',
-        400: '#868dfb',
-        500: '#6870fa',
-        600: '#535ac8',
-        700: '#3e4396',
-        800: '#2a2d64',
-        900: '#151632',
+        100: '#eadef9',
+        200: '#d5bdf3',
+        300: '#bf9bed',
+        400: '#aa7ae7',
+        500: '#9559e1',
+        600: '#7747b4',
+        700: '#593587',
+        800: '#3c245a',
+        900: '#1e122d',
       },
     }
   }
@@ -71,7 +71,7 @@ export const tokens = (mode: Theme) => {
       500: '#666666',
       600: '#858585',
       700: '#a3a3a3',
-      800: '#c2c2c2',
+      800: 'rgba(194, 194, 194',
       900: '#e0e0e0',
     },
     primary: {
@@ -108,15 +108,15 @@ export const tokens = (mode: Theme) => {
       900: '#f8dcdb',
     },
     blueAccent: {
-      100: '#151632',
-      200: '#2a2d64',
-      300: '#3e4396',
-      400: '#535ac8',
-      500: '#6870fa',
-      600: '#868dfb',
-      700: '#a4a9fc',
-      800: '#c3c6fd',
-      900: '#e1e2fe',
+      100: '#1e122d',
+      200: '#3c245a',
+      300: '#593587',
+      400: '#7747b4',
+      500: '#9559e1',
+      600: '#aa7ae7',
+      700: '#bf9bed',
+      800: '#d5bdf3',
+      900: '#eadef9',
     },
   }
 }
@@ -207,7 +207,7 @@ export const useMode = () => {
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode((prev: Theme) => (prev === 'light' ? 'dark' : 'light'))
+        setMode((prev: Theme) => (prev == 'light' ? 'dark' : 'light'))
       },
     }),
     []

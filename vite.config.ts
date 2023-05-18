@@ -12,8 +12,8 @@ export default defineConfig({
         replacement: resolve(__dirname, 'src/modules'),
       },
       {
-        find: 'assests',
-        replacement: resolve(__dirname, 'src/assests'),
+        find: 'assets',
+        replacement: resolve(__dirname, 'src/assets'),
       },
       {
         find: 'models',
@@ -22,6 +22,15 @@ export default defineConfig({
       {
         find: 'guards',
         replacement: resolve(__dirname, 'src/guards'),
+      },
+      {
+        find: 'context',
+        replacement: resolve(__dirname, 'src/context'),
+      },
+
+      {
+        find: 'components',
+        replacement: resolve(__dirname, 'src/components'),
       },
     ],
   },

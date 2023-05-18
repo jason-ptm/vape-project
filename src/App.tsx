@@ -9,21 +9,29 @@ import {
   Routes,
 } from 'react-router-dom'
 import './App.css'
+import { ColorModeContext, useMode } from 'context/theme.context'
+import { CssBaseline, ThemeProvider } from '@mui/material'
 
 function App() {
+  const { theme, colorMode } = useMode()
+
   return (
     <>
       <Router>
-        <Routes>
-          <Route path="/" element={<Navigate to={routesTypes.HOME} />} />
-          <Route path={routesTypes.HOME} element={<Store />} />
-          <Route element={<ManagerGuard />}>
-            <Route
-              path={`${routesTypes.BACKOFFICE}/*`}
-              element={<Backoffice />}
-            />
-          </Route>
-        </Routes>
+        <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Routes>
+              <Route path="/*" element={<Store />} />
+              <Route element={<ManagerGuard />}>
+                <Route
+                  path={`${routesTypes.BACKOFFICE}/*`}
+                  element={<Backoffice />}
+                />
+              </Route>
+            </Routes>
+          </ThemeProvider>
+        </ColorModeContext.Provider>
       </Router>
     </>
   )

@@ -26,7 +26,8 @@
       "@assests/*": ["./src/assests/*"],
       "@modules/*": [".src/modules/*"],
       "@guards/*": [".src/guards/*"],
-      "@models/*": [".src/models/*"]
+      "@models/*": [".src/models/*"],
+      "@components/*": [".src/components/*"]
     }
   },
   "include": [".eslintrc.cjs", "src"],

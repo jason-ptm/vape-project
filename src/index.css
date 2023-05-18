@@ -3,4 +3,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Ubuntu', 'sans-serif';
+  user-select: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
