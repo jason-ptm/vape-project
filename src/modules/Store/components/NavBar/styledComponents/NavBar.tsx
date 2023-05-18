@@ -34,6 +34,7 @@ export const LogoContainer = styled.div`
   align-items: center;
   border-right: 1px solid ${(props: any) => (props.color ? props.color : '')};
   padding-right: 15px;
+  z-index: 3500;
 `
 
 export const NavbarItemsCont = styled.div`
@@ -47,7 +48,7 @@ export const NavbarItemsCont = styled.div`
     visibility: hidden;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 550px) {
     .icon-menu {
       visibility: visible;
     }
@@ -61,10 +62,9 @@ export const ItemsResponsiveCont = styled.div`
   flex-direction: row;
   align-items: center;
   background-color: inherit;
-  z-index: 1000;
+  z-index: 3500;
 
-  @media (max-width: 480px) {
-    margin-top: 60px;
+  @media (max-width: 550px) {
     width: 100%;
     min-width: 200px;
     display: flex;
@@ -74,18 +74,28 @@ export const ItemsResponsiveCont = styled.div`
     flex-direction: column;
     gap: 10px;
     height: 100vh;
-    justify-content: flex-start;
-    border-radius: 0 0 4px 4px;
+    justify-content: center;
     transform: translateX(100%);
+    z-index: 3000;
     transition: transform 0.5s;
 
     &.open {
       transform: translateX(0);
     }
 
-    & div {
-      width: 100%;
+    & > div {
+      width: 90%;
       height: 60px;
+    }
+
+    & > div a.active,
+    & > div:hover {
+      color: ${(props: any) => (props.theme.light ? props.theme.light : '')};
+      background-color: transparent;
+    }
+
+    & > div a::after {
+      display: none;
     }
   }
 `

@@ -37,18 +37,11 @@ const NavBar: React.FC<NavBarProps> = () => {
         <Logo />
       </LogoContainer>
       <NavbarItemsCont>
-        <IconButton
-          onClick={handleOpenMenu}
-          className="icon-menu"
-          style={{ zIndex: 3000 }}
-        >
-          {open ? <CloseIcon /> : <MenuIcon />}
-        </IconButton>
-        <ItemsResponsiveCont
-          color={colors.grey[800]}
-          className={open ? 'open' : ''}
-        >
-          <ThemeProvider theme={themeNavBarItem}>
+        <ThemeProvider theme={themeNavBarItem}>
+          <ItemsResponsiveCont
+            color={colors.grey[800]}
+            className={open ? 'open' : ''}
+          >
             <NavbarItem>
               <NavLink
                 className={({ isActive }) => (isActive ? 'active' : '')}
@@ -66,9 +59,15 @@ const NavBar: React.FC<NavBarProps> = () => {
                 Tienda
               </NavLink>
             </NavbarItem>
-          </ThemeProvider>
-        </ItemsResponsiveCont>
-
+          </ItemsResponsiveCont>
+        </ThemeProvider>
+        <IconButton
+          onClick={handleOpenMenu}
+          className="icon-menu"
+          style={{ zIndex: 3000 }}
+        >
+          {open ? <CloseIcon /> : <MenuIcon />}
+        </IconButton>
         <ThemeToggle />
         <Cart />
       </NavbarItemsCont>

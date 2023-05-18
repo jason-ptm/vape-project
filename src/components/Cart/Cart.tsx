@@ -20,7 +20,10 @@ const Cart: React.FC<CartProps> = () => {
   const [items, setItems] = useState(0)
 
   return (
-    <IconButton onClick={handleCartClick} sx={{ position: 'relative' }}>
+    <IconButton
+      onClick={handleCartClick}
+      sx={{ position: 'relative', zIndex: 3500 }}
+    >
       <ItemsCount color={colors.blueAccent[600]}>{items}</ItemsCount>
       <ShoppingCartIcon />
     </IconButton>

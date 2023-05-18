@@ -15,7 +15,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = () => {
       {
         <IconButton
           onClick={colorMode.toggleColorMode}
-          style={{ margin: '5px' }}
+          style={{ margin: '5px', zIndex: 3500 }}
         >
           {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
