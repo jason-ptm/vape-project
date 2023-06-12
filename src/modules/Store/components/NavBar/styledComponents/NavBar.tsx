@@ -4,12 +4,15 @@ export const NavBarStyle = styled.div`
   width: 100%;
   height: 60px;
   padding: 0 30px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   position: relative;
   background-color: inherit;
+
+  .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: inherit;
+  }
 
   &::after {
     content: '';
@@ -25,6 +28,10 @@ export const NavBarStyle = styled.div`
       ${(props: any) => (props.color ? `${props.color}, 0.51) 0%` : '')},
       rgba(0, 0, 0, 0) 100%
     );
+  }
+
+  @media (max-width: 350px) {
+    padding: 10px;
   }
 `
 
@@ -46,11 +53,13 @@ export const NavbarItemsCont = styled.div`
 
   .icon-menu {
     visibility: hidden;
+    display: none;
   }
 
   @media (max-width: 550px) {
     .icon-menu {
       visibility: visible;
+      display: block;
     }
   }
 `

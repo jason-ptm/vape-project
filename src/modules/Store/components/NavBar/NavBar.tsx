@@ -33,44 +33,47 @@ const NavBar: React.FC<NavBarProps> = () => {
 
   return (
     <NavBarStyle color={colors.grey[800]}>
-      <LogoContainer color={colors.grey[700]}>
-        <Logo />
-      </LogoContainer>
-      <NavbarItemsCont>
-        <ThemeProvider theme={themeNavBarItem}>
-          <ItemsResponsiveCont
-            color={colors.grey[800]}
-            className={open ? 'open' : ''}
-          >
-            <NavbarItem>
-              <NavLink
-                className={({ isActive }) => (isActive ? 'active' : '')}
-                to={routesTypes.HOME}
-              >
-                Inicio
-              </NavLink>
-            </NavbarItem>
+      <div className="container">
+        <LogoContainer color={colors.grey[700]}>
+          <Logo />
+        </LogoContainer>
+        <NavbarItemsCont>
+          <ThemeProvider theme={themeNavBarItem}>
+            <ItemsResponsiveCont
+              color={colors.grey[800]}
+              className={open ? 'open' : ''}
+            >
+              <NavbarItem>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                  to={routesTypes.HOME}
+                >
+                  Inicio
+                </NavLink>
+              </NavbarItem>
 
-            <NavbarItem>
-              <NavLink
-                to={routesTypes.STORE}
-                className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                Tienda
-              </NavLink>
-            </NavbarItem>
-          </ItemsResponsiveCont>
-        </ThemeProvider>
-        <IconButton
-          onClick={handleOpenMenu}
-          className="icon-menu"
-          style={{ zIndex: 3000 }}
-        >
-          {open ? <CloseIcon /> : <MenuIcon />}
-        </IconButton>
-        <ThemeToggle />
-        <Cart />
-      </NavbarItemsCont>
+              <NavbarItem>
+                <NavLink
+                  to={routesTypes.STORE}
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
+                  Tienda
+                </NavLink>
+              </NavbarItem>
+
+              <ThemeToggle />
+            </ItemsResponsiveCont>
+          </ThemeProvider>
+          <IconButton
+            onClick={handleOpenMenu}
+            className="icon-menu"
+            style={{ zIndex: 3000 }}
+          >
+            {open ? <CloseIcon /> : <MenuIcon />}
+          </IconButton>
+          <Cart />
+        </NavbarItemsCont>
+      </div>
     </NavBarStyle>
   )
 }
