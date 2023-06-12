@@ -1,7 +1,10 @@
+import { CssBaseline, ThemeProvider } from '@mui/material'
+import { ColorModeContext, useMode } from 'context/theme.context'
 import { ManagerGuard } from 'guards'
 import { routesTypes } from 'models'
 import { Backoffice } from 'modules/Backoffice'
 import { Store } from 'modules/Store'
+import { Suspense } from 'react'
 import {
   Navigate,
   Route,
@@ -9,8 +12,6 @@ import {
   Routes,
 } from 'react-router-dom'
 import './App.css'
-import { ColorModeContext, useMode } from 'context/theme.context'
-import { CssBaseline, ThemeProvider } from '@mui/material'
 
 function App() {
   const { theme, colorMode } = useMode()
@@ -21,15 +22,18 @@ function App() {
         <ColorModeContext.Provider value={colorMode}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Routes>
-              <Route path="/*" element={<Store />} />
-              <Route element={<ManagerGuard />}>
-                <Route
-                  path={`${routesTypes.BACKOFFICE}/*`}
-                  element={<Backoffice />}
-                />
-              </Route>
-            </Routes>
+            <Suspense fallback={<>...</>}>
+              <Routes>
+                <Route path="/" element={<Navigate to={routesTypes.HOME} />} />
+                <Route path="/*" element={<Store />} />
+                <Route element={<ManagerGuard />}>
+                  <Route
+                    path={`${routesTypes.BACKOFFICE}/*`}
+                    element={<Backoffice />}
+                  />
+                </Route>
+              </Routes>
+            </Suspense>
           </ThemeProvider>
         </ColorModeContext.Provider>
       </Router>
