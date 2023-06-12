@@ -13,7 +13,7 @@ export const tokens = (mode: Theme) => {
         500: '#666666',
         600: '#525252',
         700: '#3d3d3d',
-        800: 'rgba(41, 41, 41',
+        800: 'rgba(41, 41, 41', //This setting is for rgba values
         900: '#141414',
       },
       primary: {
@@ -71,7 +71,7 @@ export const tokens = (mode: Theme) => {
       500: '#666666',
       600: '#858585',
       700: '#a3a3a3',
-      800: 'rgba(194, 194, 194',
+      800: 'rgba(194, 194, 194', //This setting is for rgba values
       900: '#e0e0e0',
     },
     primary: {

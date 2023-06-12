@@ -1,6 +1,7 @@
 import { styled } from 'styled-components'
 
 export const ItemsCount = styled.div`
+  color: inherit;
   width: 20px;
   height: 20px;
   display: flex;
