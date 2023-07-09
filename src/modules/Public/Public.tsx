@@ -5,23 +5,24 @@ import React, { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
 import { NavBar } from './components/NavBar'
+import { Footer } from './components/Footer'
 
 const Home = lazy(() => import('./pages/Home/Home'))
 
-export type StoreProps = {}
+export type PublicProps = {}
 
-const StoreStyle = styled.div`
+const PublicStyle = styled.div`
+  padding-top: 60px;
   width: 100%;
-  height: 100%;
   background-color: ${(props) => (props.color ? props.color : '')};
 `
 
-const Store: React.FC<StoreProps> = () => {
+const Public: React.FC<PublicProps> = () => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
 
   return (
-    <StoreStyle color={colors.grey[900]}>
+    <PublicStyle color={colors.grey[900]}>
       <NavBar />
 
       <Routes>
@@ -29,8 +30,9 @@ const Store: React.FC<StoreProps> = () => {
         <Route path={routesTypes.STORE} element={<h1>Store</h1>} />
         <Route path={routesTypes.CART} element={<h1>Cart</h1>} />
       </Routes>
-    </StoreStyle>
+
+      <Footer />
+    </PublicStyle>
   )
 }
-
-export default Store
+export default Public

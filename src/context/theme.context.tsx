@@ -1,6 +1,6 @@
-import { createContext, useState, useMemo } from 'react'
 import { createTheme } from '@mui/material'
 import { Theme } from 'models'
+import { createContext, useMemo, useState } from 'react'
 
 export const tokens = (mode: Theme) => {
   if (mode === 'dark') {
@@ -23,8 +23,8 @@ export const tokens = (mode: Theme) => {
         400: '#1F2A40',
         500: '#141b2d',
         600: '#101624',
-        700: '#0c101b',
-        800: '#080b12',
+        700: '#252b30',
+        800: '#333333',
         900: '#040509',
       },
       greenAccent: {
@@ -42,7 +42,7 @@ export const tokens = (mode: Theme) => {
         100: '#f8dcdb',
         200: '#f1b9b7',
         300: '#e99592',
-        400: '#e2726e',
+        400: '#FF8E23', //manually changed
         500: '#db4f4a',
         600: '#af3f3b',
         700: '#832f2c',
@@ -82,7 +82,7 @@ export const tokens = (mode: Theme) => {
       500: '#141b2d',
       600: '#1F2A40',
       700: '#727681',
-      800: '#a1a4ab',
+      800: '#fffefc',
       900: '#d0d1d5',
     },
     greenAccent: {
@@ -100,7 +100,7 @@ export const tokens = (mode: Theme) => {
       100: '#2c100f',
       200: '#58201e',
       300: '#832f2c',
-      400: '#af3f3b',
+      400: '#F29F05', //manually changed
       500: '#db4f4a',
       600: '#e2726e',
       700: '#e99592',
@@ -137,7 +137,7 @@ const MuiThemes = (mode: Theme) => {
         light: colors.grey[100],
       },
       background: {
-        default: colors.primary[500],
+        default: colors.grey[900],
       },
     }
   }
@@ -167,30 +167,30 @@ export const themeSettings = (mode: Theme) => {
       ...MuiThemes(mode),
     },
     typography: {
-      fontFamily: ['Titillium Web', 'sans - serif'].join(','),
+      fontFamily: ['Ubuntu', 'sans - serif'].join(','),
       fontSize: 12,
       h1: {
-        fontFamily: ['Titillium Web', 'sans - serif'].join(','),
+        fontFamily: ['Ubuntu', 'sans - serif'].join(','),
         fontSize: 40,
       },
       h2: {
-        fontFamily: ['Titillium Web', 'sans - serif'].join(','),
+        fontFamily: ['Ubuntu', 'sans - serif'].join(','),
         fontSize: 32,
       },
       h3: {
-        fontFamily: ['Titillium Web', 'sans - serif'].join(','),
+        fontFamily: ['Ubuntu', 'sans - serif'].join(','),
         fontSize: 24,
       },
       h4: {
-        fontFamily: ['Titillium Web', 'sans - serif'].join(','),
+        fontFamily: ['Ubuntu', 'sans - serif'].join(','),
         fontSize: 20,
       },
       h5: {
-        fontFamily: ['Titillium Web', 'sans - serif'].join(','),
+        fontFamily: ['Ubuntu', 'sans - serif'].join(','),
         fontSize: 16,
       },
       h6: {
-        fontFamily: ['Titillium Web', 'sans - serif'].join(','),
+        fontFamily: ['Ubuntu', 'sans - serif'].join(','),
         fontSize: 14,
       },
     },
@@ -202,7 +202,7 @@ export const ColorModeContext = createContext({
 })
 
 export const useMode = () => {
-  const [mode, setMode] = useState<Theme>('light')
+  const [mode, setMode] = useState<Theme>('dark')
 
   const colorMode = useMemo(
     () => ({

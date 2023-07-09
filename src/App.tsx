@@ -2,9 +2,8 @@ import { CssBaseline, ThemeProvider } from '@mui/material'
 import { ColorModeContext, useMode } from 'context/theme.context'
 import { ManagerGuard } from 'guards'
 import { routesTypes } from 'models'
-import { Backoffice } from 'modules/Backoffice'
-import { Store } from 'modules/Store'
-import { Suspense } from 'react'
+
+import { Suspense, lazy } from 'react'
 import {
   Navigate,
   Route,
@@ -12,6 +11,9 @@ import {
   Routes,
 } from 'react-router-dom'
 import './App.css'
+
+const Public = lazy(() => import('modules/Public/Public'))
+const Backoffice = lazy(() => import('modules/Backoffice/Backoffice'))
 
 function App() {
   const { theme, colorMode } = useMode()
@@ -25,7 +27,7 @@ function App() {
             <Suspense fallback={<>...</>}>
               <Routes>
                 <Route path="/" element={<Navigate to={routesTypes.HOME} />} />
-                <Route path="/*" element={<Store />} />
+                <Route path="/*" element={<Public />} />
                 <Route element={<ManagerGuard />}>
                   <Route
                     path={`${routesTypes.BACKOFFICE}/*`}

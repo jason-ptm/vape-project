@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { IconButton, useTheme } from '@mui/material'
-import { ItemsCount } from './items/items'
 import { tokens } from 'context/theme.context'
-import { useNavigate } from 'react-router-dom'
 import { routesTypes } from 'models'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { ItemsCount } from './items/items'
 
 export type CartProps = {}
 

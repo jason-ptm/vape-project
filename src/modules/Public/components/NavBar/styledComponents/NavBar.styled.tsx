@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 
-export const NavBarStyle = styled.div`
+export const NavBarStyle = styled.div<{ hide: string }>`
   width: 100%;
   height: 60px;
   padding: 0 30px;
-  position: relative;
+  position: fixed;
+  top: ${(props: any) => (props.hide == 'true' ? '-60px' : '0')};
   background-color: inherit;
+  z-index: 3000;
+  transition: top 0.5s;
 
   .container {
     flex-direction: row;
@@ -25,7 +28,8 @@ export const NavBarStyle = styled.div`
     z-index: 200;
     background: linear-gradient(
       180deg,
-      ${(props: any) => (props.color ? `${props.color}, 0.51) 0%` : '')},
+      ${(props: any) =>
+    props.theme.background ? `${props.theme.background} 0%` : ''},
       rgba(0, 0, 0, 0) 100%
     );
   }
@@ -33,15 +37,6 @@ export const NavBarStyle = styled.div`
   @media (max-width: 350px) {
     padding: 10px;
   }
-`
-
-export const LogoContainer = styled.div`
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  border-right: 1px solid ${(props: any) => (props.color ? props.color : '')};
-  padding-right: 15px;
-  z-index: 3500;
 `
 
 export const NavbarItemsCont = styled.div`
@@ -74,21 +69,23 @@ export const ItemsResponsiveCont = styled.div`
   z-index: 3500;
 
   @media (max-width: 550px) {
+    opacity: 0;
     width: 100%;
-    min-width: 200px;
+    min-width: 300px;
     display: flex;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 60px;
     flex-direction: column;
     gap: 10px;
-    height: 100vh;
+    height: calc(100vh - 60px);
+    min-height: 400px;
     justify-content: center;
     transform: translateX(100%);
-    z-index: 3000;
     transition: transform 0.5s;
 
     &.open {
+      opacity: 1;
       transform: translateX(0);
     }
 
@@ -110,11 +107,14 @@ export const ItemsResponsiveCont = styled.div`
 `
 
 export const NavbarItem = styled.div`
-  width: 80px;
+  width: 100px;
   height: 100%;
   position: relative;
   border-radius: 2px;
   cursor: pointer;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2mm;
   transition: background 0.5s;
 
   & a {

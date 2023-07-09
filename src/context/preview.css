@@ -10,19 +10,21 @@ grey {
   background-color: #3d3d3d;
   background-color: rgb(41, 41, 41);
   background-color: #141414;
+  text-decoration: ;
 }
 
 primary {
   background-color: #d0d1d5;
-  background-color: #a1a4ab;
+  background-color: #fffefc;
   background-color: #727681;
   background-color: #1f2a40;
   background-color: #141b2d;
   background-color: #101624;
   background-color: #0c101b;
   background-color: #080b12;
-  background-color: #040509;
+  background-color: #252b30;
   background-color: #00000088;
+  
 }
 
 greenAccent {
@@ -35,13 +37,14 @@ greenAccent {
   background-color: #2e7c67;
   background-color: #1e5245;
   background-color: #0f2922;
+  scroll-behavior: ;
 }
 
 redAccent {
   background-color: #f8dcdb;
   background-color: #f1b9b7;
   background-color: #e99592;
-  background-color: #e2726e;
+  background-color: #FF8E23;
   background-color: #db4f4a;
   background-color: #af3f3b;
   background-color: #832f2c;

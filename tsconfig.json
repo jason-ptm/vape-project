@@ -30,6 +30,11 @@
       "@components/*": [".src/components/*"]
     }
   },
-  "include": [".eslintrc.cjs", "src"],
+  "include": [
+    ".eslintrc.cjs",
+    "swiper.d.ts",
+    "src",
+    "src/modules/Public/pages/Home/views/Slider/views/Flavors/Flavors.tsx"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
